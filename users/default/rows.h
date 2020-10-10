@@ -6,12 +6,16 @@
 #define ___________________BLANK___________________                 _______, _______, _______, _______, _______
 
 #define _________________DVORAK_L1_________________                 KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y
-#define _________________DVORAK_L2_________________                 LSFT_T(KC_A), LCTL_T(KC_O), LALT_T(KC_E), LGUI_T(KC_U), KC_I
+#define _________________DVORAK_L2_________________                 KC_A,    KC_O,    KC_E,    KC_U,    KC_I
 #define _________________DVORAK_L3_________________                 KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X
+#define ______________DVORAK_L2_MODS_______________                 LSFT_T(KC_A), LCTL_T(KC_O), LALT_T(KC_E), LGUI_T(KC_U), KC_I
+#define ______________DVORAK_L3_SHIFT______________                 LSFT_T(KC_SCLN), KC_Q,    KC_J,    KC_K,    KC_X
 
 #define _________________DVORAK_R1_________________                 KC_F,    KC_G,    KC_C,    KC_R,    KC_L
-#define _________________DVORAK_R2_________________                 KC_D,    LGUI_T(KC_H), LALT_T(KC_T), LCTL_T(KC_N), LSFT_T(KC_S)
+#define _________________DVORAK_R2_________________                 KC_D,    KC_H,    KC_T,    KC_N,    KC_S
 #define _________________DVORAK_R3_________________                 KC_B,    KC_M,    KC_W,    KC_V,    KC_Z
+#define ______________DVORAK_R2_MODS_______________                 KC_D,    LGUI_T(KC_H), LALT_T(KC_T), LCTL_T(KC_N), LSFT_T(KC_S)
+#define ______________DVORAK_R3_SHIFT______________                 KC_B,    KC_M,    KC_W,    KC_V,    RSFT_T(KC_Z)
 
 #define _________________QWERTY_L1_________________                 KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define _________________QWERTY_L2_________________                 KC_A,    KC_S,    KC_D,    KC_F,    KC_G
