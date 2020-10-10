@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 FROM python:alpine
-ARG QMK_VERSION=0.10.9
+ARG QMK_VERSION=0.10.33
 ENV QMK_HOME=/qmk
 WORKDIR /qmk
 RUN apk --no-cache add bash wget git build-base gcc-avr avr-libc \

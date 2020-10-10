@@ -9,10 +9,11 @@
 #endif
 
 enum userspace_layers {
-  _QWERTY,
+  _DVORAK,
   _LOWER,
   _RAISE,
   _ADJUST,
+  _QWERTY,
   _NUM
 };
 
