@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source "$(dirname "$0")"/build-info.sh
+
+flash_keyboard() {
+  hex="$(echo "${1}"|tr '/' '_')_hunner.hex"
+
+  if [ ! -e "${hex}" ]; then
+    echo "No file found: ${hex}"
+    exit 1
+  fi
+
+  echo -n "Waiting for device."
+  while [ ! -e "/dev/ttyACM0" ]; do
+    sleep 1
+    echo -n "."
+  done
+  avrdude -p atmega32u4 -c avr109 -P /dev/ttyACM0 -U flash:w:"${hex}"
+}
+
+flash_keyboard $@

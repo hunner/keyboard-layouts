@@ -1,6 +1,6 @@
 MKDIR_P            := mkdir -p
 DOCKER             := docker
-BUILDER_IMAGE_NAME := hunner/qmk-keyboard-builder:latest
+BUILDER_IMAGE_NAME := docker.pkg.github.com/hunner/keyboard-layouts/qmk-keyboard-builder:latest
 NAMESPACE          := kt-qmk
 FORCE_PERMS        := true
 BUILD_ERRORS       = exit 1
