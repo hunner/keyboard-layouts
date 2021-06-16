@@ -1,51 +1,38 @@
 # Keyboard layouts
 
-These are my various keyboard layouts. They are being kept here so I don't have
-to make a pull request to the QMK upstream project everytime I want to make a
-change.
+These are my keyboard layouts. They are being kept here so I don't have to
+maintain a qmk fork.
 
 ## How it works
 
-Layouts are structured under `keyboards/<board name>/<layout name>`. When you
-want to build a board, `make` will pull down the qmk build image from docker
-hub, mount `keyboards/<board name>/<layout name>` under a unique namespace in
-the container and then runs QMK's `make` target like normal.
+The only supported layout name is `hunner` :).
+
+Layouts are structured under `keyboards/<board name>/<layout name>`.
+
+`make` will build a docker image for compiling keyboard .hex files
+
+`./scripts/build-keyboard <board name>` will build the .hex using the container.
+
+`./scripts/flash-keyboard <board name>` will flash the .hex to `/dev/ttyACM0` via `avrdude`
 
 ## Example usage
 
-`./scripts/build-keyboard dz60/default`
+`./scripts/build-keyboard 40percentclub/foobar`
 
-Resulting firmware will be in `./dz60-default.hex`.
+Resulting firmware will be in `./40percentclub_foobar_hunner.hex`.
 
 ## Flashing
+
+### With Arduino style (usually pro-micro boards)
+
+```
+./scripts/flash-keyboard 40percentclub/foobar
+```
 
 ### With DFU (boards like the planck and dz60)
 
 ```
 $ dfu-programmer atmega32u4 erase
-$ dfu-programmer atmega32u4 flash dz60-default.hex
+$ dfu-programmer atmega32u4 flash whatever_huner.hex
 $ dfu-programmer atmega32u4 reset
 ```
-
-### With Arduino style (usually pro-micro boards)
-
-```
-$ avrdude -p atmega32u4 -c avr109 -P /dev/ttyACM0 -U flash:w:40percentclub_ut47-default.hex
-```
-
-### With QMK CLI
-
-```
-$ qmk flash dz60-default.hex
-```
-
-## Useful stuff
-
-The proper udev rules need to be added in order to access the MCU and flash the
-chip on your microcontroller: https://github.com/qmk/qmk_firmware/blob/master/docs/faq_build.md#linux-udev-rules
-
-## TODO
-
-- Add support for Keyboardio Model-01 layouts
-    - This exists in qmk now.
-- Add layout generator with yaml configuration
