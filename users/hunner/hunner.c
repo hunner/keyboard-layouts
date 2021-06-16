@@ -37,5 +37,5 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 uint32_t layer_state_set_user(uint32_t state) {
-    return update_tri_layer_state(state, _LEFT, _RIGHT, _ADJUST);
+    return update_tri_layer_state(state, _PORT, _STARBOARD, _AFT);
 }
