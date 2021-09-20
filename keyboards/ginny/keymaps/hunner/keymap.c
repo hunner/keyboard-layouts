@@ -1,13 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "hunner.h"
 
-/*
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[0] = LAYOUT_ginny(
-		KC_A, KC_S, KC_E, KC_T, KC_L, KC_R, KC_N, KC_I, KC_O, KC_P
-)};
-*/
-
 enum combos {
   UE_I,
   UO_Y,
@@ -30,25 +23,27 @@ enum combos {
   HTS_V,
 };
 
-const uint16_t PROGMEM ue_combo[] = {KC_U, KC_E, COMBO_END};
-const uint16_t PROGMEM uo_combo[] = {KC_U, KC_O, COMBO_END};
-const uint16_t PROGMEM ua_combo[] = {KC_U, KC_A, COMBO_END};
-const uint16_t PROGMEM oe_combo[] = {KC_O, KC_E, COMBO_END};
-const uint16_t PROGMEM ea_combo[] = {KC_E, KC_A, COMBO_END};
-const uint16_t PROGMEM oa_combo[] = {KC_O, KC_A, COMBO_END};
-const uint16_t PROGMEM aoe_combo[] = {KC_A, KC_O, KC_E, COMBO_END};
-const uint16_t PROGMEM aou_combo[] = {KC_A, KC_O, KC_U, COMBO_END};
-const uint16_t PROGMEM aeu_combo[] = {KC_A, KC_E, KC_U, COMBO_END};
+// Left helm combos
+const uint16_t PROGMEM ue_combo[] = {LGUI_U, LALT_E, COMBO_END};
+const uint16_t PROGMEM uo_combo[] = {LGUI_U, LCTL_O, COMBO_END};
+const uint16_t PROGMEM ua_combo[] = {LGUI_U, LSFT_A, COMBO_END};
+const uint16_t PROGMEM oe_combo[] = {LCTL_O, LALT_E, COMBO_END};
+const uint16_t PROGMEM ea_combo[] = {LALT_E, LSFT_A, COMBO_END};
+const uint16_t PROGMEM oa_combo[] = {LCTL_O, LSFT_A, COMBO_END};
+const uint16_t PROGMEM aoe_combo[] = {LSFT_A, LCTL_O, LALT_E, COMBO_END};
+const uint16_t PROGMEM aou_combo[] = {LSFT_A, LCTL_O, LGUI_U, COMBO_END};
+const uint16_t PROGMEM aeu_combo[] = {LSFT_A, LALT_E, LGUI_U, COMBO_END};
 
-const uint16_t PROGMEM ht_combo[] = {KC_H, KC_T, COMBO_END};
-const uint16_t PROGMEM hn_combo[] = {KC_H, KC_N, COMBO_END};
-const uint16_t PROGMEM hs_combo[] = {KC_H, KC_S, COMBO_END};
-const uint16_t PROGMEM tn_combo[] = {KC_T, KC_N, COMBO_END};
-const uint16_t PROGMEM ts_combo[] = {KC_T, KC_S, COMBO_END};
-const uint16_t PROGMEM ns_combo[] = {KC_N, KC_S, COMBO_END};
-const uint16_t PROGMEM tns_combo[] = {KC_T, KC_N, KC_S, COMBO_END};
-const uint16_t PROGMEM hns_combo[] = {KC_H, KC_N, KC_S, COMBO_END};
-const uint16_t PROGMEM hts_combo[] = {KC_H, KC_T, KC_S, COMBO_END};
+// Right helm combos
+const uint16_t PROGMEM ht_combo[] = {RGUI_H, RALX_T, COMBO_END};
+const uint16_t PROGMEM hn_combo[] = {RGUI_H, RCTL_N, COMBO_END};
+const uint16_t PROGMEM hs_combo[] = {RGUI_H, RSFT_S, COMBO_END};
+const uint16_t PROGMEM tn_combo[] = {RALX_T, RCTL_N, COMBO_END};
+const uint16_t PROGMEM ts_combo[] = {RALX_T, RSFT_S, COMBO_END};
+const uint16_t PROGMEM ns_combo[] = {RCTL_N, RSFT_S, COMBO_END};
+const uint16_t PROGMEM tns_combo[] = {RALX_T, RCTL_N, RSFT_S, COMBO_END};
+const uint16_t PROGMEM hns_combo[] = {RGUI_H, RCTL_N, RSFT_S, COMBO_END};
+const uint16_t PROGMEM hts_combo[] = {RGUI_H, RALX_T, RSFT_S, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [UE_I]  = COMBO(ue_combo, KC_I),
@@ -72,27 +67,26 @@ combo_t key_combos[COMBO_COUNT] = {
   [HTS_V]  = COMBO(hts_combo, KC_V)
 };
 
-// LSFT() works, LSFT_T() does not. Some difference with holding keys vs. tapping?
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BOW] = LAYOUT_ginny(
-      KC_A, KC_O, KC_E, KC_U,
-      KC_BSPC, KC_SPC,
-      KC_H, KC_T, KC_N, KC_S
-      ),
-
-  [_PORT] = LAYOUT_ginny(
-      KC_Z, KC_X, KC_B, KC_P,
+  [_BOW] = LAYOUT_ginny_wrapper(
+      LSFT_A , LCTL_O , LALT_E , LGUI_U ,
       L_THUMB, R_THUMB,
-      KC_G, KC_C, KC_R, KC_L
+      RGUI_H , RALX_T , RCTL_N , RSFT_S
       ),
 
-  [_STARBOARD] = LAYOUT_ginny(
+  [_PORT] = LAYOUT_ginny_wrapper(
+      KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN,
+      L_THUMB, R_THUMB,
+      KC_EQL , KC_SLSH, KC_PLUS, KC_MINS
+      ),
+
+  [_STARBOARD] = LAYOUT_ginny_wrapper(
       KC_Y, KC_Q, KC_J, KC_K,
       L_THUMB, R_THUMB,
       KC_F, KC_V, KC_W, KC_M
       ),
 
-  [_AFT] = LAYOUT_ginny(
+  [_AFT] = LAYOUT_ginny_wrapper(
       KC_A, KC_O, KC_E, KC_U,
       L_THUMB, R_THUMB,
       KC_H, KC_T, KC_N, KC_S

@@ -1,14 +1,16 @@
-#!/bin/bash
+#!/bin/bash -x
 
 cd "${QMK_HOME}"
 
-mkdir -p "${QMK_HOME}"/keyboards/${KEYBOARD}/keymaps
 if [ -d "${QMK_HOME}"/keyboards/${KEYBOARD} ] ; then
+  mkdir -p "${QMK_HOME}"/keyboards/${KEYBOARD}/keymaps
   ln -s /keyboard-layouts/keyboards/"${LOCAL_KEYBOARD_PATH}"/"${KEYMAP}" "${QMK_HOME}"/keyboards/${KEYBOARD}/keymaps/"${KEYMAP}"
 else
   ln -s /keyboard-layouts/keyboards/"${LOCAL_KEYBOARD_PATH}" "${QMK_HOME}"/keyboards/${KEYBOARD}
 fi
-ln -s /keyboard-layouts/users/"${KEYMAP}" "${QMK_HOME}"/users/"${KEYMAP}"
+if [ ! -d "${QMK_HOME}"/users/"${KEYMAP}" ] ; then
+  ln -s /keyboard-layouts/users/"${KEYMAP}" "${QMK_HOME}"/users/"${KEYMAP}"
+fi
 
 qmk compile -kb "${KEYBOARD}" -km "${KEYMAP}"
 

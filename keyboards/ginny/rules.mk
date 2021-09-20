@@ -5,7 +5,7 @@ BOOTLOADER          =   atmel-dfu
 CUSTOM_MATRIX       =   yes
 VIRTSER_ENABLE      =   no
 NKRO_ENABLE         =   no
-DEBOUNCE_TYPE       =   eager_pr
+DEBOUNCE_TYPE       =   sym_eager_pr
 
 # Lets try and save some space eh?
 MOUSEKEY_ENABLE     =   no
