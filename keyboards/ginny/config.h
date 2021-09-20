@@ -40,8 +40,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* key matrix size */
 #define MATRIX_ROWS 9
 #define MATRIX_COLS 2
-#define MATRIX_MAIN 4
-#define MATRIX_I2C (MATRIX_ROWS - MATRIX_MAIN)
+#define MATRIX_LEFT 4
+#define MATRIX_RIGHT (MATRIX_ROWS - MATRIX_LEFT)
 
 #define MOUSEKEY_INTERVAL 20
 #define MOUSEKEY_DELAY 0

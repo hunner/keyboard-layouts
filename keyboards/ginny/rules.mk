@@ -13,7 +13,7 @@ EXTRAKEY_ENABLE     =   no
 CONSOLE_ENABLE      =   yes
 COMMAND_ENABLE      =   no
 
-VPATH               +=  keyboards/gboards/ 
+VPATH               +=  keyboards/
 SRC                 +=  matrix.c #g/engine.c config_engine.c
 QUANTUM_LIB_SRC     +=  i2c_master.c
 OPT_DEFS            +=  -DONLYQWERTY 

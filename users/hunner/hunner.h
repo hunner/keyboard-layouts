@@ -7,6 +7,7 @@
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
+#define LAYOUT_ginny_wrapper(...)            LAYOUT_ginny(__VA_ARGS__)
 
 #define _BOW 0 // dvroak layer
 #define _PORT 1 // left thumb

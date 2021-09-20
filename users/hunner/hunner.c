@@ -22,6 +22,7 @@ const uint16_t PROGMEM gc_combo[] = {KC_G, KC_C, COMBO_END};
 const uint16_t PROGMEM cr_combo[] = {KC_C, KC_R, COMBO_END};
 const uint16_t PROGMEM wv_combo[] = {KC_W, KC_V, COMBO_END};
 
+/*
 combo_t key_combos[COMBO_COUNT] = {
   // Left half
   [XB_ESC]  = COMBO(xb_combo, KC_ESC),
@@ -38,4 +39,13 @@ combo_t key_combos[COMBO_COUNT] = {
 
 uint32_t layer_state_set_user(uint32_t state) {
     return update_tri_layer_state(state, _PORT, _STARBOARD, _AFT);
+}
+*/
+
+void keyboard_post_init_user(void) {
+  // Customise these values to desired behaviour
+  debug_enable=true;
+  debug_matrix=true;
+  //debug_keyboard=true;
+  //debug_mouse=true;
 }

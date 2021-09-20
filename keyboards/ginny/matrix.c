@@ -1,13 +1,17 @@
 /*
+
 Copyright 2013 Oleg Kostyuk <cub.uanic@gmail.com>
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
+
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -106,6 +110,7 @@ void matrix_init(void) {
     debounce_init(MATRIX_ROWS);
     matrix_init_quantum();
 }
+
 void matrix_power_up(void) {
     mcp23018_status = init_mcp23018();
 
@@ -128,6 +133,7 @@ static inline bool store_raw_matrix_row(uint8_t index) {
     }
     return false;
 }
+
 uint8_t matrix_scan(void) {
     if (mcp23018_status) {  // if there was an error
         if (++mcp23018_reset_loop == 0) {
@@ -145,19 +151,19 @@ uint8_t matrix_scan(void) {
     }
 
     bool changed = false;
-    for (uint8_t i = 0; i < MATRIX_I2C; i++) {
+    for (uint8_t i = 0; i < MATRIX_RIGHT; i++) {
         // select rows from left and right hands
-        uint8_t i2c_index  = i;
-        uint8_t main_index = i + MATRIX_I2C;
-        select_row(i2c_index);
+        uint8_t right_index  = i;
+        uint8_t left_index = i + MATRIX_RIGHT;
 
-        if (i < MATRIX_MAIN) select_row(main_index);
+        select_row(right_index);
+        if (i < MATRIX_LEFT) select_row(left_index);
 
         // we don't need a 30us delay anymore, because selecting a
         // left-hand row requires more than 30us for i2c.
 
-        changed |= store_raw_matrix_row(i2c_index);
-        if (i < MATRIX_MAIN) changed |= store_raw_matrix_row(main_index);
+        changed |= store_raw_matrix_row(right_index);
+        if (i < MATRIX_LEFT) changed |= store_raw_matrix_row(left_index);
 
         unselect_rows();
     }
@@ -171,7 +177,7 @@ uint8_t matrix_scan(void) {
             if (matrix_is_on(r, c)) xprintf("r:%d c:%d \n", r, c);
 #endif
 
-    return changed;
+    return 1;
 }
 
 bool matrix_is_modified(void)  // deprecated and evidently not called.
@@ -185,9 +191,9 @@ inline matrix_row_t matrix_get_row(uint8_t row) { return matrix[row]; }
 void matrix_print(void) {
     print("\nr/c 0123456789ABCDEF\n");
     for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
-        phex(row);
+        print_hex8(row);
         print(": ");
-        pbin_reverse16(matrix_get_row(row));
+        print_bin_reverse16(matrix_get_row(row));
         print("\n");
     }
 }
@@ -207,7 +213,7 @@ static void init_cols(void) {
     PORTF |= FMASK;
 }
 static matrix_row_t read_cols(uint8_t row) {
-    if (row < MATRIX_I2C) {
+    if (row < MATRIX_RIGHT) {
         if (mcp23018_status) {  // if there was an error
             return 0;
         } else {
@@ -240,7 +246,7 @@ static void unselect_rows(void) {
 }
 
 static void select_row(uint8_t row) {
-    if (row < MATRIX_I2C) {
+    if (row < MATRIX_RIGHT) {
         // select on mcp23018
         if (mcp23018_status) {  // do nothing on error
         } else {                // set active row low  : 0 // set other rows hi-Z : 1
@@ -251,7 +257,7 @@ static void select_row(uint8_t row) {
             mcp23018_status = i2c_write(0xFF & ~(1 << (row)), I2C_TIMEOUT);
             if (mcp23018_status) goto out;
         out:
-            i2c_stop()chang;
+            i2c_stop();
         }
     } else {
         // Output low(DDR:1, PORT:0) to select
