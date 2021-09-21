@@ -3,10 +3,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_BOW] = LAYOUT_ortho_3x10_wrapper(
-    ________________BOW_LEFT_1_________________, ________________BOW_RIGHT_1________________,
-    ________________BOW_LEFT_2_________________, ________________BOW_RIGHT_2________________,
-    _______, _______BOW_LEFT_3________, L_THUMB, R_THUMB, _______BOW_RIGHT_3_______, _______
+  [_HELM] = LAYOUT_ortho_3x10_wrapper(
+    _______________HELM_LEFT_1_________________, _______________HELM_RIGHT_1________________,
+    _______________HELM_LEFT_2_________________, _______________HELM_RIGHT_2________________,
+    _______, ______HELM_LEFT_3________, L_THUMB, R_THUMB, ______HELM_RIGHT_3_______, _______
   ),
 
   [_PORT] = LAYOUT_ortho_3x10_wrapper(

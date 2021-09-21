@@ -9,7 +9,7 @@
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
 #define LAYOUT_ginny_wrapper(...)            LAYOUT_ginny(__VA_ARGS__)
 
-#define _BOW 0 // dvroak layer
+#define _HELM 0 // dvroak layer
 #define _PORT 1 // left thumb
 #define _STARBOARD 2 // right thumb
 #define _AFT 3 // both thumbs
@@ -33,13 +33,13 @@
 #define PASTE    LSFT(KC_INS)
 
 //      ______________LAYER_SIDE_ROW_______________
-#define ________________BOW_LEFT_1_________________     KC_Z   , KC_X   , KC_B   , KC_P   , KC_Y
-#define ________________BOW_LEFT_2_________________     LSFT_A , LCTL_O , LALT_E , LGUI_U , KC_I
-#define          _______BOW_LEFT_3________                       KC_Q   , KC_J   , KC_K
+#define _______________HELM_LEFT_1_________________     KC_Z   , KC_X   , KC_B   , KC_P   , KC_Y
+#define _______________HELM_LEFT_2_________________     LSFT_A , LCTL_O , LALT_E , LGUI_U , KC_I
+#define          ______HELM_LEFT_3________                       KC_Q   , KC_J   , KC_K
 
-#define ________________BOW_RIGHT_1________________     KC_F   , KC_G   , KC_C   , KC_R   , KC_L
-#define ________________BOW_RIGHT_2________________     KC_D   , RGUI_H , RALX_T , RCTL_N , RSFT_S
-#define          _______BOW_RIGHT_3_______                       KC_M   , KC_W   , KC_V
+#define _______________HELM_RIGHT_1________________     KC_F   , KC_G   , KC_C   , KC_R   , KC_L
+#define _______________HELM_RIGHT_2________________     KC_D   , RGUI_H , RALX_T , RCTL_N , RSFT_S
+#define          ______HELM_RIGHT_3_______                       KC_M   , KC_W   , KC_V
 
 #define _______________PORT_LEFT_1_________________     KC_QUOT, KC_COMM, KC_DOT , KC_SCLN, KC_PGUP
 #define _______________PORT_LEFT_2_________________     KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_PGDN
@@ -54,11 +54,11 @@
 #define          ____STARBOARD_LEFT_3_____                       _______, _______, _______
 
 #define _____________STARBOARD_RIGHT_1_____________     KC_6   , KC_7   , KC_8   , KC_9   , KC_0
-#define _____________STARBOARD_RIGHT_2_____________     KC_INS , KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT
+#define _____________STARBOARD_RIGHT_2_____________     _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT
 #define          ____STARBOARD_RIGHT_3____                       _______, _______, _______
 
 #define ________________AFT_LEFT_1_________________     KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5
-#define ________________AFT_LEFT_2_________________     KC_F11 , KC_F12 , _______, _______, PASTE
+#define ________________AFT_LEFT_2_________________     KC_F11 , KC_F12 , KC_INS , PASTE  , PASTE
 #define          _______AFT_LEFT_3________                       _______, _______, _______
 
 #define ________________AFT_RIGHT_1________________     KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10
