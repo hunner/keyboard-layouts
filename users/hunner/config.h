@@ -1,8 +1,10 @@
 #pragma once
 
 #undef COMBO_COUNT
-//#define COMBO_COUNT 8
-#define COMBO_COUNT 46
+#define COMBO_COUNT 8
+
+// Uncomment for ginny
+//#define COMBO_COUNT 46
 
 #define TAPPING_TERM    200
 #undef COMBO_TERM
