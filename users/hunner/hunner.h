@@ -5,6 +5,10 @@
 
 #include "quantum.h"
 
+#include "left_hand/artsey.h"
+#include "left_hand/keymap_combo.h"
+#include "left_hand/artsey.c"
+
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
 #define LAYOUT_ginny_wrapper(...)            LAYOUT_ginny(__VA_ARGS__)

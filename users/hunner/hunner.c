@@ -1,6 +1,6 @@
 #include "hunner.h"
 
-enum combos {
+enum mycombos {
   XB_ESC,
   BP_TAB,
   QJ_CLIC,
@@ -25,7 +25,11 @@ const uint16_t PROGMEM wv_combo[] = {KC_W, KC_V, COMBO_END};
 /*
  * Comment out for ginny
 */
-combo_t key_combos[COMBO_COUNT] = {
+#define COMB K_COMB
+#define SUBS A_COMB
+#define TOGG A_COMB
+combo_t key_combos[/*COMBO_COUNT*/] = {
+#include "left_hand/combos.def"
   // Left half
   [XB_ESC]  = COMBO(xb_combo, KC_ESC),
   [BP_TAB]  = COMBO(bp_combo, KC_TAB),
@@ -38,6 +42,10 @@ combo_t key_combos[COMBO_COUNT] = {
   [CR_BSPC] = COMBO(cr_combo, KC_BSPC),
   [WV_SPC]  = COMBO(wv_combo, KC_SPC)
 };
+#undef COMB
+#undef SUBS
+#undef TOGG
+
 
 uint32_t layer_state_set_user(uint32_t state) {
     return update_tri_layer_state(state, _PORT, _STARBOARD, _AFT);

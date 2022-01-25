@@ -1,7 +1,7 @@
 #pragma once
 
 #undef COMBO_COUNT
-#define COMBO_COUNT 8
+//#define COMBO_COUNT 8
 
 // Uncomment for ginny
 //#define COMBO_COUNT 46
