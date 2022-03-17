@@ -3,3 +3,5 @@
 #undef MASTER_LEFT
 #define MASTER_RIGHT
 
+#define MIDI_ADVANCED
+

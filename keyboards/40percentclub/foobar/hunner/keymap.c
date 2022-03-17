@@ -1,12 +1,35 @@
 #include QMK_KEYBOARD_H
 #include "hunner.h"
 
+#define _TALON_ HYPR(KC_TAB)
+
+
+#define MIDI_CC_ON 127
+#define MIDI_CC_OFF 0
+extern MidiDevice midi_device;
+enum custom_keycodes {
+  MIDI_CC80 = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case MIDI_CC80:
+      if (record->event.pressed) {
+        midi_send_cc(&midi_device, midi_config.channel, 80, MIDI_CC_ON);
+      } else {
+        midi_send_cc(&midi_device, midi_config.channel, 80, MIDI_CC_OFF);
+      }
+      return true;
+  }
+  return true;
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BOW] = LAYOUT_ortho_3x10_wrapper(
     ________________BOW_LEFT_1_________________, ________________BOW_RIGHT_1________________,
     ________________BOW_LEFT_2_________________, ________________BOW_RIGHT_2________________,
-    _______, _______BOW_LEFT_3________, L_THUMB, R_THUMB, _______BOW_RIGHT_3_______, _______
+    MI_ON  , _______BOW_LEFT_3________, L_THUMB, R_THUMB, _______BOW_RIGHT_3_______, MIDI_CC80
   ),
 
   [_PORT] = LAYOUT_ortho_3x10_wrapper(
