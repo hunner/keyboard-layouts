@@ -7,6 +7,7 @@
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
+#define LAYOUT_split_3x5_3_wrapper(...)      LAYOUT_split_3x5_3(__VA_ARGS__)
 #define LAYOUT_ginny_wrapper(...)            LAYOUT_ginny(__VA_ARGS__)
 
 #define _HELM 0 // dvroak layer
@@ -63,7 +64,7 @@
 
 #define ________________AFT_RIGHT_1________________     KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10
 #define ________________AFT_RIGHT_2________________     _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
-#define          _______AFT_RIGHT_3______                       _______, _______, _______
+#define          _______AFT_RIGHT_3_______                       _______, _______, _______
 
 
 #endif
