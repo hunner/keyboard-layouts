@@ -1,0 +1,13 @@
+// Left half
+COMB(XB_ESC,  KC_ESC,  KC_X, KC_B)
+COMB(BP_TAB,  KC_TAB,  KC_B, KC_P)
+COMB(QJ_CLIC, KC_BTN1, KC_Q, KC_J)
+COMB(QK_CLIC, KC_BTN3, KC_Q, KC_K)
+COMB(JK_CLIC, KC_BTN2, KC_J, KC_K)
+
+// Right half
+COMB(GC_ENT,  KC_ENT,  KC_G, KC_C)
+COMB(CR_BSPC, KC_BSPC, KC_C, KC_R)
+COMB(WV_SPC,  KC_SPC,  KC_W, KC_V)
+
+#include "taipo/taipo.def"

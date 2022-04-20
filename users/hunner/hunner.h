@@ -4,6 +4,7 @@
 #define USERSPACE
 
 #include "quantum.h"
+#include "taipo/taipo.h"
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
@@ -14,6 +15,8 @@
 #define _PORT 1 // left thumb
 #define _STARBOARD 2 // right thumb
 #define _AFT 3 // both thumbs
+#define _PLANK 4 // double-tap right thumb
+#define _TAIPO 9 // typytypy
 
 #define L_BSPC LT(_PORT, KC_BSPC)
 #define R_SPC  LT(_STARBOARD, KC_SPC)
@@ -66,5 +69,10 @@
 #define ________________AFT_RIGHT_2________________     _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
 #define          _______AFT_RIGHT_3_______                       _______, _______, _______
 
+#define TAIPO_1_LEFT______________________              KC_R   , KC_S   , KC_N   , KC_I
+#define TAIPO_2_LEFT______________________              KC_A   , KC_O   , KC_T   , KC_E
+
+#define TAIPO_1_RIGHT_____________________              KC_I   , KC_N   , KC_S   , KC_R
+#define TAIPO_2_RIGHT_____________________              KC_E   , KC_T   , KC_O   , KC_A
 
 #endif

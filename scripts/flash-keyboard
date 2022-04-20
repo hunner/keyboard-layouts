@@ -2,8 +2,10 @@
 
 source "$(dirname "$0")"/build-info.sh
 
+keymap=${2:-hunner}
+
 flash_keyboard() {
-  hex="$(echo "${1}"|tr '/' '_')_hunner.hex"
+  hex="$(echo "${1}"|tr '/' '_')_${keymap}.hex"
 
   if [ ! -e "${hex}" ]; then
     echo "No file found: ${hex}"

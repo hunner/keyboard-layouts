@@ -1,0 +1,7 @@
+BOOTMAGIC_ENABLE = no # 100 bytes
+EXTRAKEY_ENABLE = no # 500 bytes
+CONSOLE_ENABLE = no # 4800 bytes
+COMMAND_ENABLE = no # 400 bytes
+BACKLIGHT_ENABLE = no # 0 bytes
+RGBLIGHT_ENABLE = no # 0 bytes
+AUDIO_ENABLE = no # 0 bytes

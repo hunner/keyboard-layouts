@@ -1,16 +1,21 @@
 #pragma once
 
-#undef COMBO_COUNT
-#define COMBO_COUNT 8
-
 // Uncomment for ginny
 //#define COMBO_COUNT 46
+
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 1000
 
 #define TAPPING_TERM    200
 #undef COMBO_TERM
 #define COMBO_TERM    50
+#define COMBO_MUST_HOLD_MODS
 #undef DEBOUNCE
 #define DEBOUNCE    26
+
+// Needed for BT-500
+#undef TAP_CODE_DELAY
+#define TAP_CODE_DELAY 26
 
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
