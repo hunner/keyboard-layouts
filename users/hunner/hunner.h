@@ -12,6 +12,7 @@
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
 #define LAYOUT_split_3x5_3_wrapper(...)      LAYOUT_split_3x5_3(__VA_ARGS__)
 #define LAYOUT_ginny_wrapper(...)            LAYOUT_ginny(__VA_ARGS__)
+#define LAYOUT_georgi_wrapper(...)           LAYOUT_georgi(__VA_ARGS__)
 
 #define _HELM 0 // dvroak layer
 #define _PORT 1 // left thumb
