@@ -7,6 +7,7 @@
 #define LEADER_TIMEOUT 1000
 
 #define TAPPING_TERM    200
+#define TAPPING_TERM_PER_KEY
 #undef COMBO_TERM
 #define COMBO_TERM    50
 #define COMBO_MUST_HOLD_MODS

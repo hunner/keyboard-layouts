@@ -5,3 +5,5 @@ COMMAND_ENABLE = no # 400 bytes
 BACKLIGHT_ENABLE = no # 0 bytes
 RGBLIGHT_ENABLE = no # 0 bytes
 AUDIO_ENABLE = no # 0 bytes
+
+STENO_ENABLE = yes

@@ -5,6 +5,8 @@
 
 #include "quantum.h"
 #include "taipo/taipo.h"
+#include "keymap_steno.h"
+
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_3x10_wrapper(...)       LAYOUT_ortho_3x10(__VA_ARGS__)
@@ -17,6 +19,12 @@
 #define _AFT 3 // both thumbs
 #define _PLANK 4 // double-tap right thumb
 #define _TAIPO 9 // typytypy
+#define _STENO 10 // keeb go brrr
+
+// I could use XXXXXXX but that's ugly, and I really never want transparent
+// keys.
+#undef _______
+#define _______ KC_NO
 
 #define L_BSPC LT(_PORT, KC_BSPC)
 #define R_SPC  LT(_STARBOARD, KC_SPC)
