@@ -18,20 +18,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT(
     KC_ESC , KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_BSPC,
-    KC_TAB , RGB_TOG, RGB_VAD, RGB_VAI, RGB_MOD, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT,
+    KC_TAB ,RGB_TOG, RGB_VAD, RGB_VAI, RGB_MOD, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT,
     KC_LCTL, KC_LALT, _______, MO(3)  , KC_RGUI, KC_RALT, KC_RCTL,
-    XXXXXXX
+    KC_LSFT
   ),
   [2] = LAYOUT(
     KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   ,
     KC_GRV , KC_BSLS, KC_MINS, KC_EQL , KC_LBRC, KC_RBRC, KC_SCLN, KC_QUOT, KC_ENT ,
-    KC_LCTL, KC_LALT, MO(3)  , _______, KC_COMM, KC_DOT , KC_SLSH,
-    XXXXXXX
+    KC_LGUI, KC_INS , MO(3)  , _______, KC_COMM, KC_DOT , KC_SLSH,
+    KC_LSFT
   ),
   [3] = LAYOUT(
     KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10  ,
     KC_F11 , KC_F12 , RGB_SPD, RGB_SPI, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, KC_DEL,
     KC_LCTL, KC_LALT, _______, _______, KC_RGUI, KC_RALT, KC_RCTL,
-    XXXXXXX
+    KC_LSFT
   )
 };
