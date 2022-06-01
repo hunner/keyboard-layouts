@@ -1,6 +1,22 @@
+AUDIO_ENABLE = no # 0 bytes
+BACKLIGHT_ENABLE = no # 0 bytes
+BOOTMAGIC_ENABLE = no # 100 bytes
+COMMAND_ENABLE = no # 400 bytes
+CONSOLE_ENABLE = no # 4800 bytes
+EXTRAKEY_ENABLE = no # 500 bytes
+KEY_LOG_ENABLE = no
+MIDI_ENABLE = no
+NKRO_ENABLE = no
+RGBLIGHT_ENABLE = no # 0 bytes
+SLEEP_LED_ENABLE = no
+UCIS_ENABLE = no
+UNICODEMAP_ENABLE = no
+UNICODE_ENABLE = no
+
 COMBO_ENABLE = yes
 LEADER_ENABLE = yes
 MOUSEKEY_ENABLE = yes
+STENO_ENABLE = yes
 
 VPATH += keyboards/gboards
 SRC += hunner.c

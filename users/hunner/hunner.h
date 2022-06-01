@@ -45,6 +45,11 @@
 
 #define PASTE    LSFT(KC_INS)
 
+#define MS_W_UP  KC_MS_WH_UP
+#define MS_W_DN  KC_MS_WH_DOWN
+#define MS_W_LF  KC_MS_WH_LEFT
+#define MS_W_RI  KC_MS_WH_RIGHT
+
 //      ______________LAYER_SIDE_ROW_______________
 #define _______________HELM_LEFT_1_________________     KC_Z   , KC_X   , KC_B   , KC_P   , KC_Y
 #define _______________HELM_LEFT_2_________________     LSFT_A , LCTL_O , LALT_E , LGUI_U , KC_I
@@ -71,12 +76,12 @@
 #define          ____STARBOARD_RIGHT_3____                       _______, _______, _______
 
 #define ________________AFT_LEFT_1_________________     KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5
-#define ________________AFT_LEFT_2_________________     KC_F11 , KC_F12 , KC_INS , PASTE  , PASTE
-#define          _______AFT_LEFT_3________                       _______, _______, _______
+#define ________________AFT_LEFT_2_________________     KC_F11 , KC_F12 , KC_INS , KC_DEL , PASTE
+#define          _______AFT_LEFT_3________                       KC_BTN1, KC_BTN2, KC_BTN3
 
 #define ________________AFT_RIGHT_1________________     KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10
-#define ________________AFT_RIGHT_2________________     _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
-#define          _______AFT_RIGHT_3_______                       _______, _______, _______
+#define ________________AFT_RIGHT_2________________     MS_W_LF, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
+#define          _______AFT_RIGHT_3_______                       MS_W_DN, MS_W_UP, MS_W_RI
 
 #define TAIPO_1_LEFT______________________              KC_R   , KC_S   , KC_N   , KC_I
 #define TAIPO_2_LEFT______________________              KC_A   , KC_O   , KC_T   , KC_E

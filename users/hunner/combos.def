@@ -11,3 +11,4 @@ COMB(CR_BSPC, KC_BSPC, KC_C, KC_R)
 COMB(WV_SPC,  KC_SPC,  KC_W, KC_V)
 
 #include "taipo/taipo.def"
+#include "steno.def"
