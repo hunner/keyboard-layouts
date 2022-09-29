@@ -1,3 +1,6 @@
+#ifdef KEYBOARD_ginny
+#include "ginny.def"
+#else
 // Left half
 COMB(XB_ESC,  KC_ESC,  KC_X, KC_B)
 COMB(BP_TAB,  KC_TAB,  KC_B, KC_P)
@@ -12,3 +15,4 @@ COMB(WV_SPC,  KC_SPC,  KC_W, KC_V)
 
 #include "taipo/taipo.def"
 #include "steno.def"
+#endif

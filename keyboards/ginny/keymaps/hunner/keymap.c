@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "hunner.h"
 
+/*
 enum combos {
   // Left helm combos
   UE_I,
@@ -190,6 +191,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [C68_F9 ]  =  COMBO(f9_combo , KC_F9),
   [C78_F10]  =  COMBO(f10_combo, KC_F10),
 };
+*/
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_HELM] = LAYOUT_ginny_wrapper(
