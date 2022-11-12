@@ -22,6 +22,10 @@
 #define _TAIPO 9 // typytypy
 #define _STENO 10 // keeb go brrr
 
+#define L_TAIPO DF(_TAIPO)
+#define L_STENO DF(_STENO)
+#define L_HELM  DF(_HELM)
+
 // I could use XXXXXXX but that's ugly, and I really never want transparent
 // keys.
 #undef _______
@@ -69,7 +73,7 @@
 
 #define _____________STARBOARD_LEFT_1______________     KC_1   , KC_2   , KC_3   , KC_4   , KC_5
 #define _____________STARBOARD_LEFT_2______________     _______, _______, _______, _______, _______
-#define          ____STARBOARD_LEFT_3_____                       _______, _______, _______
+#define          ____STARBOARD_LEFT_3_____                       L_TAIPO, L_STENO, _______
 
 #define _____________STARBOARD_RIGHT_1_____________     KC_6   , KC_7   , KC_8   , KC_9   , KC_0
 #define _____________STARBOARD_RIGHT_2_____________     _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT

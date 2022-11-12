@@ -1,8 +1,6 @@
 // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md
 // This will need some messing with but it's close
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  // I can't figure out why add_oneshot_mods isn't found when compiling georgi
-/*
     if(record->event.pressed)
         switch(keycode) {
         case MY_LGUI: add_oneshot_mods(MOD_BIT(KC_LGUI)); add_mods(MOD_BIT(KC_LGUI)); break;
@@ -14,7 +12,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         switch(keycode) {
         case MY_LGUI: case MY_LALT: case MY_LCTL: case MY_LSFT: clear_mods(); break;
         }
-*/
     return true;
 }
 
