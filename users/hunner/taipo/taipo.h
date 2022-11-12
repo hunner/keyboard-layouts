@@ -1,5 +1,6 @@
 #pragma once
-#include "quantum.h"
+
+#include QMK_KEYBOARD_H
 
 enum my_keycodes {
     MY_LGUI = SAFE_RANGE,

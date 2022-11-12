@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 FROM python:latest
-ARG QMK_VERSION=0.17.0
+ARG QMK_VERSION=0.18.16
 ARG QMK_REPO_URL=https://github.com/qmk/qmk_firmware
 ENV QMK_HOME=/qmk_firmware
 WORKDIR /qmk_firmware
