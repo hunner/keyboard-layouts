@@ -16,7 +16,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Copy and worked on with love from the EZ team
 
 #pragma once
-#include "config_common.h"
 
 // Space saving jazz
 //#define NO_ACTION_LAYER
@@ -28,14 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_COLUMN 3
 
 #define VERBOSE
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID 0x0007
-#define PRODUCT_ID 0x0008
-#define DEVICE_VER 0x0001
-#define MANUFACTURER g Heavy Industries
-#define PRODUCT Ginny
-#define DESCRIPTION "No Motion, Max Ergo"
 
 /* key matrix size */
 #define MATRIX_ROWS 9
@@ -50,7 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_DELAY 0
 #define TAPPING_TOGGLE 1
 #define TAPPING_TERM 200
-#define IGNORE_MOD_TAP_INTERRUPT
 #define LOCKING_SUPPORT_ENABLE
 #define LOCKING_RESYNC_ENABLE
 #define IS_COMMAND() (get_mods() == (MOD_BIT(KC_LCTL) | MOD_BIT(KC_RCTL)) || get_mods() == (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)))

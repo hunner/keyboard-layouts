@@ -2,6 +2,12 @@
     "keyboard_name": "ginny",
     "url": "",
     "maintainer": "qmk",
+    "manufacturer": "g Heavy Industries",
+    "usb": {
+      "device_version": "0.0.1",
+      "pid": "0x0000",
+      "vid": "0x0007"
+    },
     "width": 10,
     "height": 1,
     "layouts": {

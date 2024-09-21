@@ -4,8 +4,8 @@
 #define USERSPACE
 
 #include "quantum.h"
-#include "taipo/taipo.h"
-#include "keymap_steno.h"
+//#include "taipo/taipo.h"
+//#include "keymap_steno.h"
 
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)

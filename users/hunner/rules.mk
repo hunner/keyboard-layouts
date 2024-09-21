@@ -17,6 +17,8 @@ COMBO_ENABLE = yes
 LEADER_ENABLE = yes
 MOUSEKEY_ENABLE = yes
 STENO_ENABLE = yes
+VIRTSER_ENABLE = yes # for steno
 
+INTROSPECTION_KEYMAP_C = hunner_combos.c
 VPATH += keyboards/gboards
 SRC += hunner.c
