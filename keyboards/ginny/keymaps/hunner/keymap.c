@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "hunner.h"
+#include "plank.c"
 
 /*
 enum combos {
@@ -196,7 +197,7 @@ combo_t key_combos[COMBO_COUNT] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_HELM] = LAYOUT_ginny_wrapper(
       LSFT_A , LCTL_O , LALT_E , LGUI_U ,
-      L_THUMB, R_THUMB,
+      L_THUMB, TD(TD_SPACE_STAR_PLANK),
       RGUI_H , RALX_T , RCTL_N , RSFT_S
       ),
 
@@ -216,5 +217,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_F11 , KC_F12 , KC_INS , PASTE  ,
       L_THUMB, R_THUMB,
       KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT
-      )
+      ),
+
+  [_PLANK] = LAYOUT_ginny_wrapper(
+      _______, KC_BTN1, KC_BTN2, KC_BTN3,
+      LT(_MAP, PASTE), R_THUMB,
+      MS_LEFT, MS_DOWN, MS_UP  , MS_RGHT
+      ),
+
+  [_MAP] = LAYOUT_ginny_wrapper(
+      _______, KC_BTN1, KC_BTN2, KC_BTN3,
+      _______, _______,
+      MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR
+      ),
 };

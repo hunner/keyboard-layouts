@@ -18,6 +18,7 @@ LEADER_ENABLE = yes
 MOUSEKEY_ENABLE = yes
 STENO_ENABLE = yes
 VIRTSER_ENABLE = yes # for steno
+TAP_DANCE_ENABLE = yes
 
 INTROSPECTION_KEYMAP_C = hunner_combos.c
 VPATH += keyboards/gboards

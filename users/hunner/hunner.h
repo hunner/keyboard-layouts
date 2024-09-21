@@ -6,6 +6,7 @@
 #include "quantum.h"
 //#include "taipo/taipo.h"
 //#include "keymap_steno.h"
+#include "plank.h"
 
 
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
@@ -19,6 +20,7 @@
 #define _STARBOARD 2 // right thumb
 #define _AFT 3 // both thumbs
 #define _PLANK 4 // double-tap right thumb
+#define _MAP 5 // ginny mouse scroll
 #define _TAIPO 9 // typytypy
 #define _STENO 10 // keeb go brrr
 
