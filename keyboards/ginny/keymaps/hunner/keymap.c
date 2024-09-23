@@ -197,7 +197,7 @@ combo_t key_combos[COMBO_COUNT] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_HELM] = LAYOUT_ginny_wrapper(
       LSFT_A , LCTL_O , LALT_E , LGUI_U ,
-      L_THUMB, TD(TD_SPACE_STAR_PLANK),
+      L_THUMB, TD(TD_CUSTOM),
       RGUI_H , RALX_T , RCTL_N , RSFT_S
       ),
 
