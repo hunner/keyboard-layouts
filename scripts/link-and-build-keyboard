@@ -1,17 +1,31 @@
-#!/bin/bash -x
+#!/usr/bin/env bash
+
+set -x
 
 cd "${QMK_HOME}"
 
-if [ -d "${QMK_HOME}"/keyboards/${KEYBOARD} ] ; then
-  mkdir -p "${QMK_HOME}"/keyboards/${KEYBOARD}/keymaps
-  ln -s /keyboard-layouts/keyboards/"${LOCAL_KEYBOARD_PATH}"/"${KEYMAP}" "${QMK_HOME}"/keyboards/${KEYBOARD}/keymaps/"${KEYMAP}"
-else
-  ln -s /keyboard-layouts/keyboards/"${LOCAL_KEYBOARD_PATH}" "${QMK_HOME}"/keyboards/${KEYBOARD}
+# if $KEYBOARD has /'s then we need to check for the existence of each directory and symlink the highest level directory
+if [[ "${KEYBOARD}" == *"/"* ]]; then
+  IFS='/' read -r -a keyboard_parts <<< "${KEYBOARD}"
+  keyboard_path=""
+  for part in "${keyboard_parts[@]}"; do
+    keyboard_path="${keyboard_path}/${part}"
+    if [ ! -d "${QMK_HOME}"/keyboards/"${keyboard_path}" ] ; then
+      ln -s /keyboard-layouts/keyboards/"${keyboard_path}" "${QMK_HOME}"/keyboards/"${keyboard_path}"
+    fi
+  done
 fi
 if [ ! -d "${QMK_HOME}"/users/"${KEYMAP}" ] ; then
   ln -s /keyboard-layouts/users/"${KEYMAP}" "${QMK_HOME}"/users/"${KEYMAP}"
 fi
 
-qmk compile -kb "${KEYBOARD}" -km "${KEYMAP}"
+#qmk compile -kb "${KEYBOARD}" -km "${KEYMAP}"
+make "${KEYBOARD}":"${KEYMAP}" -j 4
 
-cp .build/*.hex /keyboard-layouts/
+if [ -f "${QMK_HOME}"/.build/"${KEYBOARD/\//_}"_"${KEYMAP}".hex ] ; then
+  cp .build/*.hex /keyboard-layouts/
+fi
+
+if [ -f "${QMK_HOME}"/.build/"${KEYBOARD/\//_}"_"${KEYMAP}".uf2 ] ; then
+  cp .build/*.uf2 /keyboard-layouts/
+fi

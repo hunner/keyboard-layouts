@@ -58,11 +58,12 @@ adc10ksample_t to_voltage(adcsample_t sample) {
   return voltage / 1023;
 }
 
-void print_as_float(adc10ksample_t sample) {
-  int digits = sample / 10000;
-  int decimals = sample % 10000;
-  uprintf("%d.%02d\n", digits, decimals);
-}
+// TODO No idea why, but this fails for any keymap other than default/advanced
+//void print_as_float(adc10ksample_t sample) {
+//  int digits = sample / 10000;
+//  int decimals = sample % 10000;
+//  uprintf("%d.%02d\n", digits, decimals);
+//}
 
 /**
  * Tell RP2040 ADC controller to initialize a specific GPIO for ADC input
@@ -140,8 +141,8 @@ static bool interpret_adc_row(matrix_row_t cur_matrix[], adc10ksample_t voltage,
     }
 
     if (key_state) {
-        uprintf("Col %d - Row %d - State: %d, Voltage: ", col, row, key_state);
-        print_as_float(voltage);
+        //uprintf("Col %d - Row %d - State: %d, Voltage: ", col, row, key_state);
+        //print_as_float(voltage);
     }
 
 // Don't update  matrix on Pico to avoid messing with the debug system
@@ -281,6 +282,17 @@ bool handle_idle(void) {
     }
 #endif
 #ifdef BACKLIGHT_ENABLE
+    void backlight_enable_old_level(void) {
+        backlight_config_t backlight_config;
+        backlight_config.raw = eeconfig_read_backlight();
+        if (backlight_config.enable) return; // do nothing if backlight is already on
+
+        backlight_config.enable = true;
+        eeconfig_update_backlight(backlight_config.raw);
+        dprintf("backlight enable\n");
+        backlight_set(backlight_config.level);
+    }
+
     if (is_backlight_enabled() != !asleep) {
         if (asleep) {
             backlight_disable();

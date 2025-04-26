@@ -13,6 +13,6 @@ COMB(GC_ENT,  KC_ENT,  KC_G, KC_C)
 COMB(CR_BSPC, KC_BSPC, KC_C, KC_R)
 COMB(WV_SPC,  KC_SPC,  KC_W, KC_V)
 
-#include "taipo/taipo.def"
-#include "steno.def"
+//#include "taipo/taipo.def"
+//#include "steno.def"
 #endif

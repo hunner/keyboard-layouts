@@ -214,7 +214,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
       case OS_MACOS:
         rgb_matrix_sethsv(85, 255, 255); // green
         break;
-      case OS_UEFI:
+      //case OS_UEFI:
       case OS_IOS:
         // works on M1 mac
         rgb_matrix_sethsv(43, 255, 255); // yellow
@@ -235,7 +235,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         break;
       case OS_MACOS:
         break;
-      case OS_UEFI:
+      //case OS_UEFI:
       case OS_IOS:
         set_bios_mode(true);
         // works on M1 mac

@@ -34,7 +34,9 @@ void emulate_rgb_keycode_press(uint16_t target_keycode) {
 }
 #endif
 
+#ifdef SERIAL_NUMBER
 extern char ascii_serialnum[SERIALNUM_LEN+1];
+#endif
 
 void handle_factory_command(uint8_t *data) {
     uint8_t factory_command_id = data[0];

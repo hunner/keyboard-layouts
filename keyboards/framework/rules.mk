@@ -1,6 +1,6 @@
 # VIA support uses raw HID, don't need to enable it extra.
 # Only when disabling VIA but still wanting to use RAW, need to enable it here.
-VIA_ENABLE = yes
+VIA_ENABLE = no
 RAW_ENABLE = no
 
 # Enabled in info.json
@@ -20,7 +20,5 @@ CUSTOM_MATRIX = lite
 SRC += matrix.c analog.c
 
 SRC += dyn_serial.c factory.c
-
-DEFAULT_FOLDER = framework/ansi
 
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
