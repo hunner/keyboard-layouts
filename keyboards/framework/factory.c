@@ -28,7 +28,7 @@ void emulate_rgb_keycode_press(uint16_t target_keycode) {
     for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
         for (uint8_t col = 0; col < MATRIX_COLS; col++) {
             uint16_t keycode = keymaps[0][row][col];
-            process_rgb_matrix(row, col, keycode == target_keycode);
+            rgb_matrix_handle_key_event(row, col, keycode == target_keycode);
         }
     }
 }
