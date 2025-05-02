@@ -63,7 +63,8 @@
 // Because with selective suspend, the driver will eagerly suspend the keyboard after only a short while of inactivity
 #define NO_SUSPEND_POWER_DOWN
 // Must keep this, so we can suspend RGB backlight with SLEEP# pin
-#define RGB_DISABLE_WHEN_USB_SUSPENDED
+//#define RGB_DISABLE_WHEN_USB_SUSPENDED
+#define RGB_MATRIX_SLEEP
 
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
