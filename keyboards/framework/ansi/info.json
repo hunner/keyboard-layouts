@@ -19,7 +19,7 @@
         "device_version": "0.2.9",
         "pid": "0x0012",
         "vid": "0x32AC",
-        "force_nkro": false
+        "force_nkro": true
     },
     "backlight": {
         "pin": "GP25"
