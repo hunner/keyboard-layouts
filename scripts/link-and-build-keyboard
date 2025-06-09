@@ -4,16 +4,19 @@ set -x
 
 cd "${QMK_HOME}"
 
-# if $KEYBOARD has /'s then we need to check for the existence of each directory and symlink the highest level directory
-if [[ "${KEYBOARD}" == *"/"* ]]; then
-  IFS='/' read -r -a keyboard_parts <<< "${KEYBOARD}"
-  keyboard_path=""
-  for part in "${keyboard_parts[@]}"; do
-    keyboard_path="${keyboard_path}/${part}"
-    if [ ! -d "${QMK_HOME}"/keyboards/"${keyboard_path}" ] ; then
-      ln -s /keyboard-layouts/keyboards/"${keyboard_path}" "${QMK_HOME}"/keyboards/"${keyboard_path}"
-    fi
-  done
+# For complex cases where I'm adding a new keyboard that may have slashes in the name
+IFS='/' read -r -a keyboard_parts <<< "${KEYBOARD}"
+keyboard_path=""
+for part in "${keyboard_parts[@]}"; do
+  keyboard_path="${keyboard_path}/${part}"
+  if [ ! -d "${QMK_HOME}"/keyboards/"${keyboard_path}" ] ; then
+    ln -s /keyboard-layouts/keyboards/"${keyboard_path}" "${QMK_HOME}"/keyboards/"${keyboard_path}"
+  fi
+done
+# For simple cases where I'm just adding a keymap to an existing keyboard
+if [ ! -d "${KEYBOARD}"/keymaps ] ; then
+  mkdir -p "${QMK_HOME}"/keyboards/"${KEYBOARD}"/keymaps
+  ln -s /keyboard-layouts/keyboards/"${KEYBOARD}"/"${KEYMAP}" "${QMK_HOME}"/keyboards/"${KEYBOARD}"/keymaps/"${KEYMAP}"
 fi
 if [ ! -d "${QMK_HOME}"/users/"${KEYMAP}" ] ; then
   ln -s /keyboard-layouts/users/"${KEYMAP}" "${QMK_HOME}"/users/"${KEYMAP}"

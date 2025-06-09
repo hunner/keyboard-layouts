@@ -1,9 +1,9 @@
 AUDIO_ENABLE = no # 0 bytes
-BACKLIGHT_ENABLE = no # 0 bytes
+BACKLIGHT_ENABLE = yes # 0 bytes
 BOOTMAGIC_ENABLE = no # 100 bytes
 COMMAND_ENABLE = no # 400 bytes
 CONSOLE_ENABLE = no # 4800 bytes
-EXTRAKEY_ENABLE = no # 500 bytes
+EXTRAKEY_ENABLE = yes # 500 bytes
 KEY_LOG_ENABLE = no
 MIDI_ENABLE = no
 NKRO_ENABLE = yes
